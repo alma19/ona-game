@@ -106,14 +106,6 @@ function conference(){
 
 }
 
-function embassy(){
-  total += 343.5;
-  document.getElementById('total-display').innerHTML = total;
-  document.getElementById('q5').style.display = 'none';
-  pymChild.sendHeight();
-
-}
-
 function courtyard(){
   total +=403.5;
   document.getElementById('total-display').innerHTML = total;
@@ -130,6 +122,13 @@ function airbnb(){
 
 }
 
+function friend(){
+  document.getElementById('total-display').innerHTML = total;
+  document.getElementById('q5').style.display = 'none';
+  pymChild.sendHeight();
+
+}
+
 
 function lyft(){
   total += 42;
@@ -140,7 +139,7 @@ function lyft(){
 }
 
 function metro(){
-  total += 12;
+  total += 14;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q6').style.display = 'none';
   pymChild.sendHeight();
@@ -186,6 +185,15 @@ function nandos(){
 
 }
 
+function mcLunch(){
+  total += 11.97;
+  document.getElementById('total-display').innerHTML = total;
+  document.getElementById('q8').style.display = 'none';
+  pymChild.sendHeight();
+
+}
+
+
 function lebanese(){
   total += 87;
   document.getElementById('total-display').innerHTML = total;
@@ -201,6 +209,16 @@ function woodley(){
   pymChild.sendHeight();
 
 }
+
+function mcDinner(){
+  total += 19.17;
+  document.getElementById('total-display').innerHTML = total;
+  document.getElementById('q9').style.display = 'none';
+  pymChild.sendHeight();
+
+}
+
+
 
 function drinks(){
   total += 22;

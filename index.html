@@ -82,16 +82,16 @@
 			<p id="q5">Where did you stay during ONA? Unfortunately, you and your roommate were not able to book the conference hotel in time for the conference rate. If you chose to stay there, you had to pay the regular rate for three days. </p>
 			<event is-lodging></event>
 			<button choice breakfast onclick="conference()">Conference hotel <br /><br />($259.50 per night)</button>
-			<button choice transportation onclick="embassy()">Embassy Row<br /><br />($114.50 per night)</button>
 			<button choice transportation onclick="courtyard()">Courtyard Marriott<br /><br />($134.50 per night)</button>
 			<button choice transportation onclick="airbnb()">Airbnb<br /><br />($67.50 per night)</button>
+      <button choice transportation onclick="friend()">Stay with a friend <br /><br />($0.00 per night)</button>
 		</page>
 
 		<page transportation>
 			<p id="q6">Since you didn't stay at the conference hotel, how did you get to and from the conference everyday? You and your roommate were interested in different events, you couldn't rely on them to always share a ride with you. </p>
 			<event is-transportation>
 				<button choice breakfast onclick="lyft()">Lyft<br /><br />($7.00 per ride)</button>
-				<button choice breakfast onclick="metro()">Metro<br /><br />($2.00 per ride)</button>
+				<button choice breakfast onclick="metro()">Metro<br /><br />($2.00 for a card and $2.00 per ride)</button>
 		</page>
 
 		<page breakfast>
@@ -107,6 +107,7 @@
 			<event is-lunch>
 				<button choice dinner onclick="stone()">Stone's Throw Restaurant<br /><br />($32.00 per day)</button>
 				<button choice dinner onclick="nandos()">Nando's Peri-Peri Chicken<br /><br />($13.45 per day)</button>
+        <button choice dinner onclick="mcLunch()">McDonald's <br /><br /> ($3.99 per day)</button>
 		</page>
 
 		<page dinner>
@@ -114,6 +115,7 @@
 			<event is-dinner>
 				<button choice out onclick="lebanese()">Lebanese Taverna<br /><br />($29.00 per day)</button>
 				<button choice out onclick="woodley()"> Woodley's Cafe<br /><br /> ($15.50 per day)</button>
+        <button choice out onclick="mcDinner()">McDonald's <br /><br /> ($6.39 per day)</button>
 		</page>
 
 		<page out>
