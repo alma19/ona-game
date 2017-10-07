@@ -16,30 +16,58 @@
     <story>
   <img src="img/ona_logo.jpg" width="300px">
   <h2>How much will you spend at ONA?</h2>
-  <div id="total-display"></div>
+
 
   <page>
       <p>
-        Intro text about coming to ONA.
+        Intro text about coming to ONA. ADD START BUTTON !
       </p>
-      <p class="question">
+      <p class="question1">
           Are you a student?
       </p>
-      <button choice student onclick="test()">Yes, I am.</button>
-      <button choice non-student>No, I'm not.</button>
+      <button choice student-member onclick="none()">Yes, I am.</button>
+      <button choice non-student-member onclick="none()">No, I'm not.</button>
   </page>
-  <page student>
-      <p>Are you an ONA member?</p>
-      <event is-student></event>
-      <button choice member>Yes, I am.</button>
-      <button choice non-member>No, I am not.</button>
+
+  <page student-member>
+      <p class="question">Are you an ONA member?</p>
+      <event is-student-member></event>
+      <button choice banquet onclick="studentMember()">Yes, I am.</button>
+      <button choice banquet onclick="studentNonMember()">No, I am not.</button>
   </page>
-  <page non-student>
-      <p>CYO is a tool you can use to share your interactive stories on any modern device, including tablets and phones.</p>
-      <p>Write elaborate and exciting tales, full of interactivity, without learning any programming language.</p>
-      <event is-non-student></event>
-      <button choice member>But what <i>is</i> CYO?</button>
+
+  <page non-student-member>
+      <p class="question">Are you an ONA member?</p>
+      <event is-non-student-member></event>
+      <button choice banquet onclick="nonStudentMember()">Yes, I am.</button>
+      <button choice banquet onclick="nonStudentNonMember()">No, I am not.</button>
   </page>
+
+  <page banquet>
+      <p class="question3">Are you going to the Online Journalism Awards Banquet?</p>
+      <event is-banquet></event>
+      <button choice arrival onclick="banquet()">Yes!</button>
+      <button choice arrival>No</button>
+  </page>
+
+  <page arrival>
+    <p class="question4">How are you getting to and from ONA? A price and distance will be randomzied for you.</p>
+    <event is-arrival></event>
+    <button choice plane>Plane</button>
+    <button choice driving>Driving</button>
+    <button choice train>Train</button>
+  </page>
+
+  <page plane>
+  </page>
+
+  <page driving>
+  </page>
+
+  <page train>
+  </page>
+
+
   <page member>
       <p>You're interacting with CYO right now.</p>
       <p>This interactive questionnaire was written with simple markup. No code was needed. See the full markup below!</p>
@@ -53,7 +81,14 @@
           <p>We hope that CYO speeds up your storytelling process and lets you express the awesome stories you want to tell today!</p>
       </condition>
    </page>
+
+   <div class="price-total">
+     Current total: <span id="total-display"></div>
+   </div>
 </story>
+
+
+
 
   </body>
 </html>
