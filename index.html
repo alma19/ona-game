@@ -1,140 +1,141 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>How much will you spend at ONA?</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src='bower_components/angular/angular.min.js'></script>
-    <script src='js/cyo.js'></script>
-    <script src='js/scripts.js'></script>
+
+<head>
+	<meta charset="utf-8">
+	<title>How much will you spend at ONA?</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://pym.nprapps.org/pym.v1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src='bower_components/angular/angular.min.js'></script>
+	<script src='js/cyo.js'></script>
+	<script src='js/scripts.js'></script>
 
 
 
-  </head>
-  <body ng-app="cyo" class='container'>
-  <story>
-  <img src="img/ona_logo.jpg" width="300px">
-  <h2>How much will you spend at ONA?</h2>
+</head>
 
-  <page onload="intro()">
-    <p id="intro">
-      Welcome to ONA17! Conferences can be expensive, and ONA is no exception. Navigate the three days of the conference and see how much you spend.
-    </p>
-    <button choice start onclick="start()">Start</button>
-    <!-- <div class="intro-total" onload="introTotal()">
+<body ng-app="cyo" class='container'>
+	<story>
+		<img src="img/ona_logo.jpg" width="300px">
+		<h2>How much did you spend at ONA17?</h2>
+
+		<page onload="intro()">
+			<p id="intro">
+				Conferences can be expensive, and ONA is no exception. Navigate the three days of the conference and see how much you spent.
+			</p>
+			<button choice start onclick="start()">Start</button>
+			<!-- <div class="intro-total" onload="introTotal()">
        Intro Total: $<span id="total-display"></div>
     </div> -->
-  </page>
+		</page>
 
-  <page start start2>
+		<page start start2>
 
-      <p class="question1">
-          It's time to register. You're looking to buy an ONA17 general pass at least a month before the start of the conference.<br /><br /> Are you a student?
-      </p>
-      <button choice student-member onclick="none()">Yes, I am</button>
-      <button choice non-student-member onclick="none()">No, I'm not</button>
-  </page>
+			<p class="question1">
 
-  <page student-member>
-      <p class="question">Are you an ONA member?</p>
-      <event is-student-member></event>
-      <button choice banquet onclick="studentMember()">Yes, I am</button>
-      <button choice banquet onclick="studentNonMember()">No, I am not</button>
-  </page>
+                You bought an ONA17 general pass at least a month before the start of the conference.
+            <br /><br /> Are you a student?
+			</p>
+			<button choice student-member onclick="none()">Yes, I am</button>
+			<button choice non-student-member onclick="none()">No, I'm not</button>
+		</page>
 
-  <page non-student-member>
-      <p class="question">Are you an ONA member?</p>
-      <event is-non-student-member></event>
-      <button choice banquet onclick="nonStudentMember()">Yes, I am</button>
-      <button choice banquet onclick="nonStudentNonMember()">No, I am not</button>
-  </page>
+		<page student-member>
+			<p class="question">Are you an ONA member?</p>
+			<event is-student-member></event>
+			<button choice banquet onclick="studentMember()">Yes, I am</button>
+			<button choice banquet onclick="studentNonMember()">No, I am not</button>
+		</page>
 
-  <page banquet>
-      <p id="q3">Are you going to the Online Journalism Awards Banquet?</p>
-      <event is-banquet></event>
-      <button choice arrival onclick="banquet()">Yes<br /><br />($30.00)</button>
-      <button choice arrival onclick="deleteBanquet()">No<br /><br />($0.00)</button>
-  </page>
+		<page non-student-member>
+			<p class="question">Are you an ONA member?</p>
+			<event is-non-student-member></event>
+			<button choice banquet onclick="nonStudentMember()">Yes, I am</button>
+			<button choice banquet onclick="nonStudentNonMember()">No, I am not</button>
+		</page>
 
-  <page arrival>
-    <p id="q4">You live too far away to drive to ONA. Click to find out how much it'll cost you to fly.</p>
-    <button choice flight onclick="plane()">Fly</button>
-    <event is-arrival></event>
-  </page>
+		<page banquet>
+			<p id="q3">Did you go to the Online Journalism Awards Banquet?</p>
+			<event is-banquet></event>
+			<button choice arrival onclick="banquet()">Yes<br /><br />($30.00)</button>
+			<button choice arrival onclick="deleteBanquet()">No<br /><br />($0.00)</button>
+		</page>
 
-  <page flight>
-    <p id="flightq">
-      Your flight is $<span id="flight-price"></span>.
-      <br /><br />
-      Now you have to find somewhere to stay.<br /><br />
-    </p>
-    <button choice lodging onclick="deleteFlight()">Figure out your lodging</button>
-    <event is-flight></event>
-  </page>
+		<page arrival>
+			<p id="q4">You live too far away to drive to ONA. Click to find out how much it cost you to fly.</p>
+			<button choice flight onclick="plane()">Fly</button>
+			<event is-arrival></event>
+		</page>
 
-
-    <page lodging>
-      <p id="q5">Where will you be staying during ONA? Unfortunately, you and your roommate were not able to book the conference hotel in time for the conference rate. If you choose to stay there, you will have to pay the regular rate for three days.</p>
-      <event is-lodging></event>
-      <button choice breakfast onclick="conference()">Conference hotel <br /><br />($259.50 per night)</button>
-      <button choice transportation onclick="embassy()">Embassy Row<br /><br />($114.50 per night)</button>
-      <button choice transportation onclick="courtyard()">Courtyard Marriott<br /><br />($134.50 per night)</button>
-      <button choice transportation onclick="airbnb()">Airbnb<br /><br />($67.50 per night)</button>
-    </page>
-
-    <page transportation>
-      <p id="q6">Since you're not staying at the conference hotel, how are you planning to get to and from the conference everyday? Since your roommate and you are interested in different events, you can't rely on them to always share a ride with you. </p>
-      <event is-transportation>
-      <button choice breakfast onclick="lyft()">Lyft<br /><br />($7.00 per ride)</button>
-      <button choice breakfast onclick="metro()">Metro<br /><br />($2.00 per ride)</button>
-    </page>
-
-    <page breakfast>
-      <p id="q7">Where will you be eating breakfast?</p>
-      <event is-breakfast>
-        <button choice lunch onclick="buffet()">Buffet breakfast from the hotel <br /><br />($25.00 per day)</button>
-        <button choice lunch onclick="dunkin()">Dunkin' Donuts<br /><br />($3.59 per day)</button>
-        <button choice lunch onclick="deleteBreakfast()">Coffee and tea bar at the conference <br /><br />($0.00)</button>
-    </page>
-
-    <page lunch>
-        <p id="q8">Where will you be eating lunch?</p>
-        <event is-lunch>
-        <button choice dinner onclick="stone()">Stone's Throw Restaurant<br /><br />($32.00 per day)</button>
-        <button choice dinner onclick="nandos()">Nando's Peri-Peri Chicken<br /><br />($13.45 per day)</button>
-    </page>
-
-    <page dinner>
-      <p id="q9">Where will you be eating dinner?</p>
-      <event is-dinner>
-      <button choice out onclick="lebanese()">Lebanese Taverna<br /><br />($19.00 per day)</button>
-      <button choice out onclick="woodley()"> Woodley's Cafe<br /><br /> ($15.50 per day)</button>
-    </page>
-
-    <page out>
-      <p id="q10">Your new journalist friends want to go out for drinks. Do you join them?</p>
-      <event is-out></event>
-      <button choice end onclick="drinks()">Of course<br /><br />($22.00)</button>
-      <button choice end onclick="deleteDrinks()"> I'm going to sit this one out<br /><br />($0.00)</button>
-    </page>
-
-    <page end>
-    <event is-end></event>
-    <p>You've made it through ONA17! </p>
-    <p>If you'd like to play again, please refresh the page.</p>
-    </page>
+		<page flight>
+			<p id="flightq">
+				Your flight was $<span id="flight-price"></span>.
+				<br /><br /> Then, you had to find somewhere to stay.<br /><br />
+			</p>
+			<button choice lodging onclick="deleteFlight()">Figure out your lodging</button>
+			<event is-flight></event>
+		</page>
 
 
-   <div class="price-total">
-      <p id="final-total">
-        Total: $<span id="total-display"></div>
+		<page lodging>
+			<p id="q5">Where did you stay during ONA? Unfortunately, you and your roommate were not able to book the conference hotel in time for the conference rate. If you chose to stay there, you had to pay the regular rate for three days. </p>
+			<event is-lodging></event>
+			<button choice breakfast onclick="conference()">Conference hotel <br /><br />($259.50 per night)</button>
+			<button choice transportation onclick="embassy()">Embassy Row<br /><br />($114.50 per night)</button>
+			<button choice transportation onclick="courtyard()">Courtyard Marriott<br /><br />($134.50 per night)</button>
+			<button choice transportation onclick="airbnb()">Airbnb<br /><br />($67.50 per night)</button>
+		</page>
+
+		<page transportation>
+			<p id="q6">Since you didn't stay at the conference hotel, how did you get to and from the conference everyday? You and your roommate were interested in different events, you couldn't rely on them to always share a ride with you. </p>
+			<event is-transportation>
+				<button choice breakfast onclick="lyft()">Lyft<br /><br />($7.00 per ride)</button>
+				<button choice breakfast onclick="metro()">Metro<br /><br />($2.00 per ride)</button>
+		</page>
+
+		<page breakfast>
+			<p id="q7">Where did you eat breakfast?</p>
+			<event is-breakfast>
+				<button choice lunch onclick="buffet()">Buffet breakfast from the hotel <br /><br />($25.00 per day)</button>
+				<button choice lunch onclick="dunkin()">Dunkin' Donuts<br /><br />($3.59 per day)</button>
+				<button choice lunch onclick="deleteBreakfast()">Coffee and tea bar at the conference <br /><br />($0.00)</button>
+		</page>
+
+		<page lunch>
+			<p id="q8">Where did you eat lunch?</p>
+			<event is-lunch>
+				<button choice dinner onclick="stone()">Stone's Throw Restaurant<br /><br />($32.00 per day)</button>
+				<button choice dinner onclick="nandos()">Nando's Peri-Peri Chicken<br /><br />($13.45 per day)</button>
+		</page>
+
+		<page dinner>
+			<p id="q9">Where did you eat dinner?</p>
+			<event is-dinner>
+				<button choice out onclick="lebanese()">Lebanese Taverna<br /><br />($29.00 per day)</button>
+				<button choice out onclick="woodley()"> Woodley's Cafe<br /><br /> ($15.50 per day)</button>
+		</page>
+
+		<page out>
+			<p id="q10">You met some new journalist friends and they wanted to go out for drinks. Did you join them? </p>
+			<event is-out></event>
+			<button choice end onclick="drinks()">Of course<br /><br />($22.00)</button>
+			<button choice end onclick="deleteDrinks()"> I sat this one out<br /><br />($0.00)</button>
+		</page>
+
+		<page end>
+			<event is-end></event>
+			<p>Here's how much you spent for ONA17. </p>
+			<p>If you'd like to play again, please refresh the page.</p>
+		</page>
+
+
+		<div class="price-total">
+			<p id="final-total">
+				Total: $<span id="total-display"></div>
       </p>
    </div>
 </story>
-
-
-
 
   </body>
 </html>
