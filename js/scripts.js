@@ -1,6 +1,6 @@
 var total = 0;
-var studentMember = 150;
-var studentNonMember = 175;
+// var studentMember = 150;
+// var studentNonMember = 175;
 
 // function test(){
 //   total += 300;
@@ -8,9 +8,9 @@ var studentNonMember = 175;
 //   $('.question').css('display','none');
 // }
 
+
 function none(){
   $('.question1').css('display','none');
-  document.getElementById('question1').style.display="none";
 }
 
 function studentMember(){
@@ -41,5 +41,26 @@ function nonStudentNonMember(){
 function banquet(){
   total += 30;
   document.getElementById('total-display').innerHTML = total;
-  $('.question3').css('display','none');
+  $('.question').css('display','none');
+}
+
+function plane(){
+  total += Math.floor((Math.random() * 500) + 178);
+    document.getElementById('total-display').innerHTML = total;
+}
+
+function driving(){
+  total += Math.floor((Math.random() * 500) + 178);
+  document.getElementById('total-display').innerhTML = total; 
+}
+
+
+function embassy(){
+  total += 344;
+  document.getElementById('total-display').innerHTML = total;
+}
+
+function courtyard(){
+  total +=404;
+  document.getElementById('total-display').innerHTML = total;
 }

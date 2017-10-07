@@ -13,7 +13,7 @@
 
   </head>
   <body ng-app="cyo" class='container'>
-    <story>
+  <story>
   <img src="img/ona_logo.jpg" width="300px">
   <h2>How much will you spend at ONA?</h2>
 
@@ -22,7 +22,7 @@
       <p>
         Intro text about coming to ONA. ADD START BUTTON !
       </p>
-      <p id="question1">
+      <p class="question1">
           Are you a student?
       </p>
       <button choice student-member onclick="none()">Yes, I am.</button>
@@ -30,55 +30,88 @@
   </page>
 
   <page student-member>
-      <p id="question2" class="question">Are you an ONA member?</p>
+      <p class="question">Are you an ONA member?</p>
       <event is-student-member></event>
       <button choice banquet onclick="studentMember()">Yes, I am.</button>
       <button choice banquet onclick="studentNonMember()">No, I am not.</button>
   </page>
 
   <page non-student-member>
-      <p id="question3">Are you an ONA member?</p>
+      <p class="question">Are you an ONA member?</p>
       <event is-non-student-member></event>
       <button choice banquet onclick="nonStudentMember()">Yes, I am.</button>
       <button choice banquet onclick="nonStudentNonMember()">No, I am not.</button>
   </page>
 
   <page banquet>
-      <p id="question4">Are you going to the Online Journalism Awards Banquet?</p>
+      <p>Are you going to the Online Journalism Awards Banquet?</p>
       <event is-banquet></event>
       <button choice arrival onclick="banquet()">Yes!</button>
       <button choice arrival>No</button>
   </page>
 
   <page arrival>
-    <p id="question5">How are you getting to and from ONA? A price and distance will be randomzied for you.</p>
+    <p>You live too far away to drive to ONA. Click to find out how much it'll cost you to fly.</p>
     <event is-arrival></event>
-    <button choice lodging>Plane</button>
+    <button choice lodging onclick="plane()">Plane</button>
     <button choice lodging>Driving</button>
     <button choice lodging>Train</button>
   </page>
 
 
     <page lodging>
-      <p>Where will you be staying during ONA? Unfortunately, you were not able to book the conference hotel in time for the conference rate. If you choose to stay there, you will have to pay the regular rate.</p>
+      <p>Where will you be staying during ONA? Unfortunately, you and your roommate were not able to book the conference hotel in time for the conference rate. If you choose to stay there, you will have to pay the regular rate for three days.</p>
       <event is-lodging></event>
       <button choice breakfast>Conference hotel</button>
-      <button choice transportation>Embassy Row</button>
-      <button choice transportation>Courtyard Marriott</button>
+      <button choice transportation onclick="embassy()">Embassy Row</button>
+      <button choice transportation onclick="courtyard()">Courtyard Marriott</button>
       <button choice transportation>Airbnb</button>
     </page>
 
     <page transportation>
+      <p>Since you're not staying at the conference hotel, how are you planning to get to the conference everyday?</p>
       <event is-transportation>
+      <button choice breakfast>Lyft</button>
+      <button choice breakfast>Metro</button>
     </page>
 
     <page breakfast>
+      <p>Where will you be eating breakfast?</p>
       <event is-breakfast>
-    <page>
+        <button choice lunch>Buffet breakfast from the hotel</button>
+        <button choice lunch>Dunkin donuts</button>
+        <button choice lunch>Coffee and tea bar at the conference</button>
+    </page>
+
+    <page lunch>
+        <p>Where will you be eating lunch?</p>
+        <event is-lunch>
+        <button choice dinner>Stone's Throw Restaurant</button>
+        <button choice dinner>Nando's Peri-Peri Chicken</button>
+    </page>
+
+    <page dinner>
+      <p>Where will you be eating dinner?</p>
+      <event is-dinner>
+      <button choice out>Lebanese Taverna</button>
+      <button choice out> Woodley's Cafe</button>
+    </page>
+
+    <page out>
+      <p>Your new journalist friends what to go out for drinks? Do you join them?</p>
+      <event is-out></event>
+      <button choice end>Of course</button>
+      <button choice end> I'm going to sit this one out</button>
+    </page>
+
+    <page end>
+    <event is-end></event>
+    <p>Congrats, you've made it through ONA17.</p>
+    </page>
 
 
    <div class="price-total">
-     Current total: <span id="total-display"></div>
+      Total: <span id="total-display"></div>
    </div>
 </story>
 
