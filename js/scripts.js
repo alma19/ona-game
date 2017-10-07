@@ -1,4 +1,5 @@
 var total = 0;
+var flightPrice = Math.floor((Math.random() * 500) + 178);
 // var studentMember = 150;
 // var studentNonMember = 175;
 
@@ -7,9 +8,23 @@ var total = 0;
 //   document.getElementById('total-display').innerHTML = total;
 //   $('.question').css('display','none');
 // }
+// function onload(){
+//   document.getElementById('total-display').innerHTML = total;
+//   $('.price-total').css('display','none');
+// }
 
+window.onload = function() {
+ document.getElementById('total-display').innerHTML = total;
+}
+
+function start(){
+  total = total;
+  document.getElementById('total-display').innerHTML = total;
+}
 
 function none(){
+  total = total;
+  document.getElementById('total-display').innerHTML = total;
   $('.question1').css('display','none');
 }
 
@@ -43,32 +58,45 @@ function banquet(){
   document.getElementById('q3').style.display = 'none';
 }
 
+function deleteBanquet(){
+  document.getElementById('q3').style.display = 'none';
+}
+
 function plane(){
-  total += Math.floor((Math.random() * 500) + 178);
-    document.getElementById('total-display').innerHTML = total;
-    document.getElementById('q4').style.display = 'none';
+  total += flightPrice;
+  document.getElementById('total-display').innerHTML = total;
+  document.getElementById('q4').style.display = 'none';
+  document.getElementById('flight-price').innerHTML = flightPrice;
+}
+
+// function flight(){
+//   document.getElementById('flightq').innerHTML = flightPrice;
+// }
+
+function deleteFlight(){
+  document.getElementById('flightq').style.display = 'none';
 }
 
 function conference(){
-  total +=779;
+  total +=778.5;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q5').style.display = 'none';
 }
 
 function embassy(){
-  total += 344;
+  total += 343.5;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q5').style.display = 'none';
 }
 
 function courtyard(){
-  total +=404;
+  total +=403.5;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q5').style.display = 'none';
 }
 
 function airbnb(){
-  total += Math.floor((Math.random() * 252) + 123);
+  total += 202.5
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q5').style.display = 'none';
 }
@@ -98,8 +126,12 @@ function dunkin(){
   document.getElementById('q7').style.display = 'none';
 }
 
+function deleteBreakfast(){
+  document.getElementById('q7').style.display = 'none';
+}
+
 function stone(){
-  total += 45;
+  total += 96;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q8').style.display = 'none';
 }
@@ -112,7 +144,7 @@ function nandos(){
 }
 
 function lebanese(){
-  total += 57;
+  total += 87;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q9').style.display = 'none';
 }
@@ -127,4 +159,17 @@ function drinks(){
   total += 22;
   document.getElementById('q10').style.display = 'none';
   document.getElementById('intro').style.display = 'none';
+
+  document.getElementById("final-total").style.color="#00a39b";
+  document.getElementById("final-total").style.fontWeight="bold";
+  document.getElementById("final-total").style.fontSize="larger";
+}
+
+function deleteDrinks(){
+  document.getElementById('q10').style.display = 'none';
+  document.getElementById('intro').style.display = 'none';
+
+  document.getElementById("final-total").style.color="#00a39b";
+  document.getElementById("final-total").style.fontWeight="bold";
+  document.getElementById("final-total").style.fontSize="larger";
 }

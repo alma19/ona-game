@@ -32,6 +32,13 @@ button {
    font-size: 16px;
 }
 
+button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #00a39b;
+  border: 1px solid #00a39b;
+}
+
 
 h2 {
   padding: 0;
@@ -44,5 +51,5 @@ img {
 
 
 .price-total {
-  padding-top: 20px; 
+  padding-top: 20px;
 }
