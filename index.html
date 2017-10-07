@@ -22,7 +22,7 @@
       <p>
         Intro text about coming to ONA. ADD START BUTTON !
       </p>
-      <p class="question1">
+      <p id="question1">
           Are you a student?
       </p>
       <button choice student-member onclick="none()">Yes, I am.</button>
@@ -30,57 +30,52 @@
   </page>
 
   <page student-member>
-      <p class="question">Are you an ONA member?</p>
+      <p id="question2" class="question">Are you an ONA member?</p>
       <event is-student-member></event>
       <button choice banquet onclick="studentMember()">Yes, I am.</button>
       <button choice banquet onclick="studentNonMember()">No, I am not.</button>
   </page>
 
   <page non-student-member>
-      <p class="question">Are you an ONA member?</p>
+      <p id="question3">Are you an ONA member?</p>
       <event is-non-student-member></event>
       <button choice banquet onclick="nonStudentMember()">Yes, I am.</button>
       <button choice banquet onclick="nonStudentNonMember()">No, I am not.</button>
   </page>
 
   <page banquet>
-      <p class="question3">Are you going to the Online Journalism Awards Banquet?</p>
+      <p id="question4">Are you going to the Online Journalism Awards Banquet?</p>
       <event is-banquet></event>
       <button choice arrival onclick="banquet()">Yes!</button>
       <button choice arrival>No</button>
   </page>
 
   <page arrival>
-    <p class="question4">How are you getting to and from ONA? A price and distance will be randomzied for you.</p>
+    <p id="question5">How are you getting to and from ONA? A price and distance will be randomzied for you.</p>
     <event is-arrival></event>
-    <button choice plane>Plane</button>
-    <button choice driving>Driving</button>
-    <button choice train>Train</button>
-  </page>
-
-  <page plane>
-  </page>
-
-  <page driving>
-  </page>
-
-  <page train>
+    <button choice lodging>Plane</button>
+    <button choice lodging>Driving</button>
+    <button choice lodging>Train</button>
   </page>
 
 
-  <page member>
-      <p>You're interacting with CYO right now.</p>
-      <p>This interactive questionnaire was written with simple markup. No code was needed. See the full markup below!</p>
-      <condition is-designer>
-          <p>We hope you start using CYO to speed up your designing and prototyping today!</p>
-      </condition>
-      <condition is-developer>
-          <p>We hope you include CYO in your projects from now on! Don't forget to star the repository.</p>
-      </condition>
-      <condition is-storyteller>
-          <p>We hope that CYO speeds up your storytelling process and lets you express the awesome stories you want to tell today!</p>
-      </condition>
-   </page>
+    <page lodging>
+      <p>Where will you be staying during ONA? Unfortunately, you were not able to book the conference hotel in time for the conference rate. If you choose to stay there, you will have to pay the regular rate.</p>
+      <event is-lodging></event>
+      <button choice breakfast>Conference hotel</button>
+      <button choice transportation>Embassy Row</button>
+      <button choice transportation>Courtyard Marriott</button>
+      <button choice transportation>Airbnb</button>
+    </page>
+
+    <page transportation>
+      <event is-transportation>
+    </page>
+
+    <page breakfast>
+      <event is-breakfast>
+    <page>
+
 
    <div class="price-total">
      Current total: <span id="total-display"></div>

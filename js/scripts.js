@@ -1,4 +1,6 @@
 var total = 0;
+var studentMember = 150;
+var studentNonMember = 175;
 
 // function test(){
 //   total += 300;
@@ -8,6 +10,7 @@ var total = 0;
 
 function none(){
   $('.question1').css('display','none');
+  document.getElementById('question1').style.display="none";
 }
 
 function studentMember(){
