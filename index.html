@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src='bower_components/angular/angular.min.js'></script>
     <script src='js/cyo.js'></script>
     <script src='js/scripts.js'></script>
@@ -37,10 +38,10 @@
       <p>
         Intro text about coming to ONA.
       </p>
-      <p>
+      <p class="question">
           Are you a student?
       </p>
-      <button choice student onclick="add()">Yes, I am.</button>
+      <button choice student onclick="test()">Yes, I am.</button>
       <button choice non-student>No, I'm not.</button>
   </page>
   <page student>

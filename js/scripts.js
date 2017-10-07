@@ -1,6 +1,7 @@
 var total = 0;
 
-function add(){
+function test(){
   total += 300;
-  document.getElementById('total-display').innerHTML = total; 
+  document.getElementById('total-display').innerHTML = total;
+  $('.question').css('display','none');
 }
