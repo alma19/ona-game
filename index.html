@@ -17,11 +17,15 @@
   <img src="img/ona_logo.jpg" width="300px">
   <h2>How much will you spend at ONA?</h2>
 
-
   <page>
-      <p>
-        Intro text about coming to ONA. ADD START BUTTON !
-      </p>
+    <p id="intro">
+      Welcome to ONA17! Conferences can be expensive, and ONA is no exception. Navigate the three days of the conference and see how much you spend.
+    </p>
+    <button choice start>Start</button>
+  </page>
+
+  <page start>
+
       <p class="question1">
           Are you a student?
       </p>
@@ -44,69 +48,67 @@
   </page>
 
   <page banquet>
-      <p>Are you going to the Online Journalism Awards Banquet?</p>
+      <p id="q3">Are you going to the Online Journalism Awards Banquet?</p>
       <event is-banquet></event>
       <button choice arrival onclick="banquet()">Yes!</button>
       <button choice arrival>No</button>
   </page>
 
   <page arrival>
-    <p>You live too far away to drive to ONA. Click to find out how much it'll cost you to fly.</p>
+    <p id="q4">You live too far away to drive to ONA. Click to find out how much it'll cost you to fly.</p>
+    <button choice lodging onclick="plane()">Fly.</button>
     <event is-arrival></event>
-    <button choice lodging onclick="plane()">Plane</button>
-    <button choice lodging>Driving</button>
-    <button choice lodging>Train</button>
   </page>
 
 
     <page lodging>
-      <p>Where will you be staying during ONA? Unfortunately, you and your roommate were not able to book the conference hotel in time for the conference rate. If you choose to stay there, you will have to pay the regular rate for three days.</p>
+      <p id="q5">Where will you be staying during ONA? Unfortunately, you and your roommate were not able to book the conference hotel in time for the conference rate. If you choose to stay there, you will have to pay the regular rate for three days.</p>
       <event is-lodging></event>
       <button choice breakfast>Conference hotel</button>
       <button choice transportation onclick="embassy()">Embassy Row</button>
       <button choice transportation onclick="courtyard()">Courtyard Marriott</button>
-      <button choice transportation>Airbnb</button>
+      <button choice transportation onclick="airbnb">Airbnb</button>
     </page>
 
     <page transportation>
-      <p>Since you're not staying at the conference hotel, how are you planning to get to the conference everyday?</p>
+      <p id="q6">Since you're not staying at the conference hotel, how are you planning to get to and from the conference everyday? Since your roommate and you are interested in different events, you can't rely on them to always share a ride with you. </p>
       <event is-transportation>
-      <button choice breakfast>Lyft</button>
-      <button choice breakfast>Metro</button>
+      <button choice breakfast onclick="lyft()">Lyft</button>
+      <button choice breakfast onclick="metro()">Metro</button>
     </page>
 
     <page breakfast>
-      <p>Where will you be eating breakfast?</p>
+      <p id="q7">Where will you be eating breakfast?</p>
       <event is-breakfast>
-        <button choice lunch>Buffet breakfast from the hotel</button>
-        <button choice lunch>Dunkin donuts</button>
+        <button choice lunch onclick="buffet()">Buffet breakfast from the hotel</button>
+        <button choice lunch onclick="dunkin()">Dunkin donuts</button>
         <button choice lunch>Coffee and tea bar at the conference</button>
     </page>
 
     <page lunch>
-        <p>Where will you be eating lunch?</p>
+        <p id="q8">Where will you be eating lunch?</p>
         <event is-lunch>
-        <button choice dinner>Stone's Throw Restaurant</button>
-        <button choice dinner>Nando's Peri-Peri Chicken</button>
+        <button choice dinner onclick="stone()">Stone's Throw Restaurant</button>
+        <button choice dinner onclick="nandos()">Nando's Peri-Peri Chicken</button>
     </page>
 
     <page dinner>
-      <p>Where will you be eating dinner?</p>
+      <p id="q9">Where will you be eating dinner?</p>
       <event is-dinner>
-      <button choice out>Lebanese Taverna</button>
-      <button choice out> Woodley's Cafe</button>
+      <button choice out onclick="lebanese()">Lebanese Taverna</button>
+      <button choice out onclick="woodley()"> Woodley's Cafe</button>
     </page>
 
     <page out>
-      <p>Your new journalist friends what to go out for drinks? Do you join them?</p>
+      <p id="q10">Your new journalist friends what to go out for drinks? Do you join them?</p>
       <event is-out></event>
-      <button choice end>Of course</button>
+      <button choice end onclick="drinks()">Of course</button>
       <button choice end> I'm going to sit this one out</button>
     </page>
 
     <page end>
     <event is-end></event>
-    <p>Congrats, you've made it through ONA17.</p>
+    <p>You've made it through ONA17! </p>
     </page>
 
 
