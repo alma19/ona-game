@@ -1,17 +1,6 @@
 var total = 0;
 var flightPrice = Math.floor((Math.random() * 500) + 178);
-// var studentMember = 150;
-// var studentNonMember = 175;
 
-// function test(){
-//   total += 300;
-//   document.getElementById('total-display').innerHTML = total;
-//   $('.question').css('display','none');
-// }
-// function onload(){
-//   document.getElementById('total-display').innerHTML = total;
-//   $('.price-total').css('display','none');
-// }
 var pymChild;
 
 window.onload = function() {
