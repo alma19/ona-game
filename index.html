@@ -25,9 +25,6 @@
 				Conferences can be expensive, and ONA is no exception. Navigate the three days of the conference and see how much you spent.
 			</p>
 			<button choice start onclick="start()">Start</button>
-			<!-- <div class="intro-total" onload="introTotal()">
-       Intro Total: $<span id="total-display"></div>
-    </div> -->
 		</page>
 
 		<page start start2>
@@ -41,12 +38,14 @@
 			<button choice non-student-member onclick="none()">No, I'm not</button>
 		</page>
 
-		<page student-member>
+
+		 <page student-member>
 			<p class="question">Are you an ONA member?</p>
 			<event is-student-member></event>
 			<button choice banquet onclick="studentMember()">Yes, I am</button>
 			<button choice banquet onclick="studentNonMember()">No, I am not</button>
 		</page>
+
 
 		<page non-student-member>
 			<p class="question">Are you an ONA member?</p>
@@ -58,13 +57,21 @@
 		<page banquet>
 			<p id="q3">Did you go to the Online Journalism Awards Banquet?</p>
 			<event is-banquet></event>
-			<button choice arrival onclick="banquet()">Yes<br /><br />($30.00)</button>
+			<button choice arrival onclick="addCosts(costs.banquet.yesBanquet)">Yes<br /><br />($30.00)</button>
 			<button choice arrival onclick="deleteBanquet()">No<br /><br />($0.00)</button>
 		</page>
 
+
+		<!-- <page banquet>
+			<p id="q3">Did you go to the Online Journalism Awards Banquet?</p>
+			<event is-banquet></event>
+			<button choice arrival onclick="banquet()">Yes<br /><br />($30.00)</button>
+			<button choice arrival onclick="deleteBanquet()">No<br /><br />($0.00)</button>
+		</page> -->
+
 		<page arrival>
 			<p id="q4">You live too far away to drive to ONA. Click to find out how much it cost you to fly.</p>
-			<button choice flight onclick="plane()">Fly</button>
+			<button choice flight onclick="deleteQuestion()">Fly</button>
 			<event is-arrival></event>
 		</page>
 

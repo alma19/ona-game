@@ -1,33 +1,91 @@
 var total = 0;
+var testTotal = 0;
 var flightPrice = Math.floor((Math.random() * 500) + 178);
+var questions = ["q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10"];
+var i
 
-var pymChild;
+
+
+function deleteQuestion(){
+  for (i=0; i < questions.length; i ++){
+  document.getElementById(questions[i]).style.display = 'none';
+  }
+}
+
+// gonna attempt this object thing
+var costs = {
+  member: {
+    studentMember: 150,
+    studentNonMember: 175,
+    nonStudentMember: 659,
+    nonStudentNonMember: 989
+  },
+  banquet: {
+    yesBanquet: 30,
+    noBanquet: 0
+  },
+  transportation: {
+    plane: flightPrice,
+    lyft: 42,
+    metro: 14
+  },
+  lodging: {
+    conference: 778.5,
+    courtyard: 403.5,
+    airbnb: 202.5,
+    friend: 0
+  },
+  breakfast: {
+    buffet: 75,
+    dunkin: 10.77,
+    bar: 0
+  },
+  lunch: {
+    stone: 96,
+    nandos: 40.35,
+    mcLunch: 11.97
+  },
+  dinner: {
+    lebanese: 87,
+    woodley: 46.5,
+    mcDinner: 19.17
+  },
+  drinks: {
+    yesDrinks: 22,
+    noDrinks: 0
+  }
+};
+
+function addCosts(costs){
+ console.log("help");
+}
+
+
+
+
+
+
+
 
 window.onload = function() {
  document.getElementById('total-display').innerHTML = total;
- pymChild = new pym.Child();
- pymChild.sendHeight();
 }
 
 function start(){
   total = total;
   document.getElementById('total-display').innerHTML = total;
-  pymChild.sendHeight();
 }
 
 function none(){
   total = total;
   document.getElementById('total-display').innerHTML = total;
   $('.question1').css('display','none');
-  pymChild.sendHeight();
-
 }
 
 function studentMember(){
   total += 150;
   document.getElementById('total-display').innerHTML = total;
   $('.question').css('display','none');
-  pymChild.sendHeight();
 
 }
 
@@ -35,14 +93,12 @@ function studentNonMember(){
   total += 175;
   document.getElementById('total-display').innerHTML = total;
   $('.question').css('display','none');
-  pymChild.sendHeight();
 }
 
 function nonStudentMember(){
   total += 659;
   document.getElementById('total-display').innerHTML = total;
   $('.question').css('display','none');
-  pymChild.sendHeight();
 
 }
 
@@ -50,22 +106,16 @@ function nonStudentNonMember(){
   total += 989;
   document.getElementById('total-display').innerHTML = total;
   $('.question').css('display','none');
-  pymChild.sendHeight();
-
 }
 
 function banquet(){
   total += 30;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q3').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function deleteBanquet(){
   document.getElementById('q3').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function plane(){
@@ -73,8 +123,6 @@ function plane(){
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q4').style.display = 'none';
   document.getElementById('flight-price').innerHTML = flightPrice;
-  pymChild.sendHeight();
-
 }
 
 // function flight(){
@@ -83,39 +131,29 @@ function plane(){
 
 function deleteFlight(){
   document.getElementById('flightq').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function conference(){
   total +=778.5;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q5').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function courtyard(){
   total +=403.5;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q5').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function airbnb(){
   total += 202.5
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q5').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function friend(){
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q5').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 
@@ -123,46 +161,34 @@ function lyft(){
   total += 42;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q6').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function metro(){
   total += 14;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q6').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function buffet(){
   total += 75;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q7').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function dunkin(){
   total += 10.77;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q7').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function deleteBreakfast(){
   document.getElementById('q7').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function stone(){
   total += 96;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q8').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 
@@ -170,16 +196,12 @@ function nandos(){
   total += 40.35;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q8').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function mcLunch(){
   total += 11.97;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q8').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 
@@ -187,24 +209,18 @@ function lebanese(){
   total += 87;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q9').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function woodley(){
   total += 46.5;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q9').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 function mcDinner(){
   total += 19.17;
   document.getElementById('total-display').innerHTML = total;
   document.getElementById('q9').style.display = 'none';
-  pymChild.sendHeight();
-
 }
 
 
@@ -217,8 +233,6 @@ function drinks(){
   document.getElementById("final-total").style.color="#00a39b";
   document.getElementById("final-total").style.fontWeight="bold";
   document.getElementById("final-total").style.fontSize="larger";
-  pymChild.sendHeight();
-
 }
 
 function deleteDrinks(){
@@ -228,6 +242,4 @@ function deleteDrinks(){
   document.getElementById("final-total").style.color="#00a39b";
   document.getElementById("final-total").style.fontWeight="bold";
   document.getElementById("final-total").style.fontSize="larger";
-  pymChild.sendHeight();
-
 }
